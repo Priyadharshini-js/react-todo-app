@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { TodoContext } from '../context/TodoContext'
 import { Filters } from '../config/filterConfig'
-import FilterButton from './FilterButton'
+import Filter from './Filter'
 
 const Footer = () => {
 
@@ -9,7 +9,7 @@ const Footer = () => {
     const itemsLeft = todos.filter(todo => !todo.completed).length;
     const completedCount = todos.filter(todo => todo.completed).length;
 
-    // Don't render the footer if there are no todos
+    // Don't render the footer component if there are no todos
     if (todos.length === 0) return null
 
     return (
@@ -20,7 +20,7 @@ const Footer = () => {
                     </span>
                     <ul className="filters">
                         {Filters.map((filter, index) => (
-                            <FilterButton key={index} {...filter} />
+                            <Filter key={index} {...filter} />
                         ))}
                     </ul>
                     <button

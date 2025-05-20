@@ -27,7 +27,7 @@ li {
 .todo-container {
     background: #fff;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2), 0 25px 50px 0 rgba(0, 0, 0, .1);
-    width: 700px;
+    width: 550px;
     margin: 0 auto;
 }
 
@@ -36,13 +36,20 @@ li {
     align-items: center;
     box-shadow: inset 0 -2px 1px rgba(0, 0, 0, .03);
     height: 65px;
+    position: relative;
+    padding-left: 75px;
 }
 
 .todo-container .input-wrapper img {
     padding: 0 20px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .todo-container input,
+.todo-container input::placeholder,
 .todo-container input:focus-visible {
     font-size: 24px;
     background: rgba(0, 0, 0, .003);
@@ -139,4 +146,13 @@ li {
     background: unset;
     text-align: right;
     cursor: pointer;
+}
+
+.todo-container .todo-footer button.clear-completed:hover {
+    text-decoration: underline;
+}
+
+.todo-container .todo-footer button.clear-completed:active {
+    border: 1px solid #ce4646;
+    text-decoration: unset;
 }

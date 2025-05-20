@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
-const FilterButton = ({ name, value }) => {
+const Filter = ({ name, value }) => {
 
     const location = useLocation();
     const currentFilter = new URLSearchParams(location.search).get('filter');
@@ -17,4 +17,4 @@ const FilterButton = ({ name, value }) => {
     );
 }
 
-export default FilterButton;
+export default Filter;

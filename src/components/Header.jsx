@@ -4,7 +4,7 @@ import { TodoContext } from '../context/TodoContext'
 
 const Header = () => {
 
-    const { input, setInput, addTodo } = useContext(TodoContext)
+    const { input, setInput, addTodo, todos } = useContext(TodoContext)
     const inputRef = useRef(null)
 
     // Focus the input when the component mounts
@@ -16,7 +16,9 @@ const Header = () => {
         <>
             <header>
                 <div className="input-wrapper">
-                    <img src={expandArrow} alt="expand-arrow" width="45px" />
+                    {todos.length > 0 &&
+                        <img src={expandArrow} alt="expand-arrow" width="40px" />
+                    }
                     <input
                         ref={inputRef}
                         type="text"
